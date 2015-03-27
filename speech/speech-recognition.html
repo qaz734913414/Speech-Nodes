@@ -1,0 +1,26 @@
+<script type="text/javascript">
+    RED.nodes.registerType('speech-recognition',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"speech-recognition";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="speech-recognition">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="speech-recognition">
+    <p>本节点用于语音识别，对msg.audio_data的内容进行识别，并将识别结果放在my_msg中发送到流中</p>
+</script>
